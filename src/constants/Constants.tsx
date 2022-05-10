@@ -15,8 +15,8 @@ export const enum UNITS {
 }
 
 export const enum PATHS {
-  HOME = '/',
-  SETTINGS = 'settings',
+  HOME = '/smt-app',
+  SETTINGS = '/smt-app/settings',
 }
 
 export const degreesToNumber = (degrees: number) => {
