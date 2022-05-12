@@ -73,4 +73,4 @@ export const FeedRateCommand = (value: number) =>
   GCodeCommandFactory('F', value)
 
 export const WaitCommand = (value: number) =>
-  GCodeCommandFactory('G', 4, GCodeCommandFactory('S', value))
+  GCodeCommandFactory('G', 4, GCodeCommandFactory('P', value))

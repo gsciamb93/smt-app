@@ -1,5 +1,3 @@
-import { Rail } from './Rail'
-
 export type SmtComponent = {
   id: string
   value: string

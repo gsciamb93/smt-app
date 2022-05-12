@@ -49,7 +49,7 @@ const GCodeViewer = () => {
     addCommandsToGCode(
       gCodeLines,
       UnitsMillimetersCommand,
-      ReturnHomeCommand,
+      RapidMovementCommand({ x: 0, y: 0 }),
       PumpOnCommand
     )
 
@@ -66,7 +66,7 @@ const GCodeViewer = () => {
         { z: gCodeSettings.clearenceZ },
         gCodeSettings.feedRateZMovement
       ),
-      ReturnHomeCommand,
+      RapidMovementCommand({ x: 0, y: 0 }),
       ProgramEndCommand
     )
 
