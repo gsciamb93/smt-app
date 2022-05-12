@@ -92,7 +92,10 @@ const GCodeViewer = () => {
         addCommandsToGCode(
           gCodeLines,
           PositioningAbsoluteCommand,
-          LinearInterpolationCommand({ z: clearenceZ }, feedRateZMovement),
+          LinearInterpolationCommand(
+            { z: clearenceZ, a: 0 },
+            feedRateZMovement
+          ),
           RapidMovementCommand({ x: rail.x, y: rail.y }),
           LinearInterpolationCommand({ z: rail.z }, feedRateZ),
           ValveOnCommand,
