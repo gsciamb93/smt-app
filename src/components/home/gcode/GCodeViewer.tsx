@@ -11,7 +11,6 @@ import {
   PumpOffCommand,
   PumpOnCommand,
   RapidMovementCommand,
-  ReturnHomeCommand,
   UnitsMillimetersCommand,
   ValveOffCommand,
   ValveOnCommand,
@@ -49,7 +48,7 @@ const GCodeViewer = () => {
     addCommandsToGCode(
       gCodeLines,
       UnitsMillimetersCommand,
-      RapidMovementCommand({ x: 0, y: 0 }),
+      RapidMovementCommand({ x: 0, y: 0, a: 0 }),
       PumpOnCommand
     )
 

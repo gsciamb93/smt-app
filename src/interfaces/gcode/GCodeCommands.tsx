@@ -43,8 +43,11 @@ export const GCodeCommandFactory = (
 export const UnitsMillimetersCommand = GCodeCommandFactory('G', 21)
 export const UnitsInchesCommand = GCodeCommandFactory('G', 20)
 export const ProgramStopCommand = GCodeCommandFactory('M', 0)
-// export const ProgramEndCommand = GCodeCommandFactory('M', 30)
-export const ProgramEndCommand = GCodeCommandFactory('%')
+export const ProgramEndCommand = GCodeCommandFactory(
+  'M',
+  30,
+  GCodeCommandFactory('\n%')
+)
 export const SpindleOnClockwiseCommand = GCodeCommandFactory('M', 3)
 export const SpindleOnCounterClockwiseCommand = GCodeCommandFactory('M', 4)
 export const SpindleStopCommand = GCodeCommandFactory('M', 5)
