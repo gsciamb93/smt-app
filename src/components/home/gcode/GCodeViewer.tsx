@@ -47,7 +47,6 @@ const GCodeViewer = () => {
     //Parte iniziale del GCode'
     addCommandsToGCode(
       gCodeLines,
-      UnitsMillimetersCommand,
       RapidMovementCommand({ x: 0, y: 0, a: 0 }),
       PumpOnCommand
     )
@@ -65,6 +64,7 @@ const GCodeViewer = () => {
         { z: gCodeSettings.clearenceZ },
         gCodeSettings.feedRateZMovement
       ),
+      PositioningAbsoluteCommand,
       RapidMovementCommand({ x: 0, y: 0 }),
       ProgramEndCommand
     )
@@ -92,10 +92,7 @@ const GCodeViewer = () => {
         addCommandsToGCode(
           gCodeLines,
           PositioningAbsoluteCommand,
-          LinearInterpolationCommand(
-            { z: clearenceZ, a: 0 },
-            feedRateZMovement
-          ),
+          LinearInterpolationCommand({ z: clearenceZ }, feedRateZMovement),
           RapidMovementCommand({ x: rail.x, y: rail.y }),
           LinearInterpolationCommand({ z: rail.z }, feedRateZ),
           ValveOnCommand,
@@ -112,6 +109,7 @@ const GCodeViewer = () => {
           ValveOffCommand,
           WaitCommand(waitSecondsPick),
           LinearInterpolationCommand({ z: clearenceZ }, feedRateZMovement),
+          LinearInterpolationCommand({ a: 0 }),
           RapidMovementCommand({
             x: rail.x,
             y: rail.y,
