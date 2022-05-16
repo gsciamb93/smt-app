@@ -44,9 +44,7 @@ export const GCODE_SETTINGS_COLS: string[] = [
 export const CSV_VALID_COLS: string[] = [
   'Part ID',
   'Value',
-  'Package',
-  'Stock Code',
-  'Layer',
+  'Package',  
   'Rotation',
   'X',
   'Y',

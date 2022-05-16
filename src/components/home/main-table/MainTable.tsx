@@ -1,9 +1,9 @@
+import { RefObject } from 'react'
 import { Table } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { MAIN_TABLE_COLS } from '../../../constants/Constants'
 import { SmtComponent } from '../../../interfaces/SmtComponent'
 import { RootState } from '../../../state/store'
-
 import SmtComponentRow from './SmtComponentRow'
 
 const MainTable = () => {

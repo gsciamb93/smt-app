@@ -18,7 +18,7 @@ const FileDownloadButton = ({
   fileName,
 }: FileDownloadButtonProps) => {
   return (
-    <Container>
+    <Container className='d-inline mr-2'>
       <a
         className={className}
         href={`${dataType};charset=utf-8,${encodeURIComponent(

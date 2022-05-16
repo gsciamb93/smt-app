@@ -26,15 +26,13 @@ const CsvFileUploader = ({
         complete: function (results) {
           const cols = [...Object.keys(results.data[0] as string[])]
 
-          if (JSON.stringify(cols) == JSON.stringify(CSV_VALID_COLS)) {
+          if (CSV_VALID_COLS.every((r) => cols.includes(r))) {
             const smtComponents: SmtComponent[] = results.data.map(
               (element: any) => {
                 return {
                   id: element['Part ID'],
                   value: element['Value'],
                   package: element['Package'],
-                  stockCode: element['Stock Code'],
-                  layer: element['Layer'],
                   rotation: Number(element['Rotation']),
                   x: Number(element['X']),
                   y: Number(element['Y']),
@@ -42,8 +40,18 @@ const CsvFileUploader = ({
               }
             )
 
-            smtComponents.sort((a, b) =>
-              a.value > b.value ? 1 : b.value > a.value ? -1 : 0
+            // smtComponents.sort((a: SmtComponent, b: SmtComponent) =>
+            //   a.package.localeCompare(b.package)
+            // )
+            // smtComponents.sort((a: SmtComponent, b: SmtComponent) =>
+            //   a.value.localeCompare(b.value)
+            // )
+
+            smtComponents.sort((a: SmtComponent, b: SmtComponent) =>
+              a.id.localeCompare(b.id)
+            )
+            smtComponents.sort((a: SmtComponent, b: SmtComponent) =>
+              a.value.localeCompare(b.value) == 0 ? 0 : -1
             )
 
             setComponents(dispatch, smtComponents, files[0].name.split('.')[0])

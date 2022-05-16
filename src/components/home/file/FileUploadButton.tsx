@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { Button, Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 
 interface FileUploadButtonProps {
   className: string
@@ -17,7 +17,7 @@ const FileUploadButton = ({
   const fileInput = useRef<HTMLInputElement>(null)
 
   return (
-    <Container>
+    <Container className='d-inline mr-2'>
       <input
         ref={fileInput}
         onChange={(e) => handleFileCallback(e.target.files)}
