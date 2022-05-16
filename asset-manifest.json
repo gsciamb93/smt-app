@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/smt-app/static/css/main.e6c13ad2.css",
-    "main.js": "/smt-app/static/js/main.484b863a.js",
+    "main.js": "/smt-app/static/js/main.b248b2e8.js",
     "index.html": "/smt-app/index.html",
     "main.e6c13ad2.css.map": "/smt-app/static/css/main.e6c13ad2.css.map",
-    "main.484b863a.js.map": "/smt-app/static/js/main.484b863a.js.map"
+    "main.b248b2e8.js.map": "/smt-app/static/js/main.b248b2e8.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.484b863a.js"
+    "static/js/main.b248b2e8.js"
   ]
 }
